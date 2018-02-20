@@ -1,6 +1,6 @@
-%global commit 5629396a42b290f4cd7f19f35508815e9d247620
+%global commit 3211941dade740ad92581f488402146794798e74
 %global short_commit %(c=%{commit}; echo ${c:0:7})
-%global commit_date 20170419
+%global commit_date 20170827
 
 %global kodi_addon pvr.hts
 %global kodi_version 17.0
@@ -9,8 +9,8 @@ Name:           kodi-%(tr "." "-" <<<%{kodi_addon})
 # Use Epoch to manage upgrades from older upstream
 # (https://github.com/opdenkamp/xbmc-pvr-addons/)
 Epoch:          1
-Version:        3.4.23
-Release:        2%{?dist}
+Version:        3.4.28
+Release:        1%{?dist}
 Summary:        Kodi's frontend for Tvheadend
 
 Group:          Applications/Multimedia
@@ -52,6 +52,9 @@ Tvheadend frontend; supporting streaming of Live TV and recordings, EPG, timers.
 
 
 %changelog
+* Tue Feb 20 2018 Mohamed El Morabity <melmorabity@fedoraproject.org> - 1:3.4.28-1
+- Update to 3.4.28
+
 * Thu Aug 31 2017 RPM Fusion Release Engineering <kwizart@rpmfusion.org> - 1:3.4.23-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_27_Mass_Rebuild
 
