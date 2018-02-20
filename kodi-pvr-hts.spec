@@ -1,6 +1,6 @@
-%global commit 5629396a42b290f4cd7f19f35508815e9d247620
+%global commit 3211941dade740ad92581f488402146794798e74
 %global short_commit %(c=%{commit}; echo ${c:0:7})
-%global commit_date 20170419
+%global commit_date 20170827
 
 %global kodi_addon pvr.hts
 %global kodi_version 17.0
@@ -9,7 +9,7 @@ Name:           kodi-%(tr "." "-" <<<%{kodi_addon})
 # Use Epoch to manage upgrades from older upstream
 # (https://github.com/opdenkamp/xbmc-pvr-addons/)
 Epoch:          1
-Version:        3.4.23
+Version:        3.4.28
 Release:        1%{?dist}
 Summary:        Kodi's frontend for Tvheadend
 
@@ -52,6 +52,9 @@ Tvheadend frontend; supporting streaming of Live TV and recordings, EPG, timers.
 
 
 %changelog
+* Tue Feb 20 2018 Mohamed El Morabity <melmorabity@fedoraproject.org> - 1:3.4.28-1
+- Update to 3.4.28
+
 * Wed Apr 26 2017 Mohamed El Morabity <melmorabity@fedoraproject.org> - 1:3.4.23-1
 - Update to latest stable release for Kodi 17
 
