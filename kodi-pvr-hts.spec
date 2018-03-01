@@ -10,7 +10,7 @@ Name:           kodi-%(tr "." "-" <<<%{kodi_addon})
 # (https://github.com/opdenkamp/xbmc-pvr-addons/)
 Epoch:          1
 Version:        3.4.28
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Kodi's frontend for Tvheadend
 
 Group:          Applications/Multimedia
@@ -52,6 +52,9 @@ Tvheadend frontend; supporting streaming of Live TV and recordings, EPG, timers.
 
 
 %changelog
+* Thu Mar 01 2018 RPM Fusion Release Engineering <leigh123linux@googlemail.com> - 1:3.4.28-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_28_Mass_Rebuild
+
 * Tue Feb 20 2018 Mohamed El Morabity <melmorabity@fedoraproject.org> - 1:3.4.28-1
 - Update to 3.4.28
 
