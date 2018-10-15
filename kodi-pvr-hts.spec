@@ -10,7 +10,7 @@ Name:           kodi-%(tr "." "-" <<<%{kodi_addon})
 # (https://github.com/opdenkamp/xbmc-pvr-addons/)
 Epoch:          1
 Version:        4.3.6
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        TVHeadEnd PVR for Kodi
 
 # Addon is GPLv2+. SHA1 implementation from FFmpeg bundled in
@@ -26,7 +26,7 @@ BuildRequires:  kodi-devel >= %{kodi_version}
 BuildRequires:  platform-devel
 Requires:       kodi >= %{kodi_version}
 Provides:       bundled(sha1-ffmpeg)
-ExclusiveArch:  i686 x86_64 aarch64
+ExcludeArch:    %{power64} ppc64le
 
 %description
 %{summary}.
@@ -52,6 +52,9 @@ ExclusiveArch:  i686 x86_64 aarch64
 
 
 %changelog
+* Mon Oct 15 2018 Mohamed El Morabity <melmorabity@fedoraproject.org> - 1:4.3.6-2
+- Enable arm build
+
 * Sat Sep 01 2018 Mohamed El Morabity <melmorabity@fedoraproject.org> - 1:4.3.6-1
 - Update to 4.3.6
 - Enable aarch64 build
