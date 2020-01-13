@@ -1,23 +1,20 @@
-%global commit 7c7c6cefc785ccd5ee7015eb997e0c688258a4e0
-%global shortcommit %(c=%{commit}; echo ${c:0:7})
-%global commitdate 20180825
-
 %global kodi_addon pvr.hts
 %global kodi_version 18.0
+%global kodi_codename Leia
 
 Name:           kodi-%(tr "." "-" <<<%{kodi_addon})
 # Use Epoch to manage upgrades from older upstream
 # (https://github.com/opdenkamp/xbmc-pvr-addons/)
 Epoch:          1
-Version:        4.3.6
-Release:        4%{?dist}
+Version:        4.4.20
+Release:        1%{?dist}
 Summary:        TVHeadEnd PVR for Kodi
 
 # Addon is GPLv2+. SHA1 implementation from FFmpeg bundled in
 # lib/libhts is LGPLv2+
 License:        GPLv2+ and LGPLv2+
 URL:            https://github.com/kodi-pvr/%{kodi_addon}/
-Source0:        https://github.com/kodi-pvr/%{kodi_addon}/archive/%{shortcommit}/%{kodi_addon}-%{shortcommit}.tar.gz
+Source0:        %{url}/archive/%{version}-%{kodi_codename}/%{kodi_addon}-%{version}.tar.gz
 
 BuildRequires:  cmake
 BuildRequires:  gcc-c++
@@ -33,7 +30,7 @@ ExcludeArch:    %{power64} ppc64le
 
 
 %prep
-%autosetup -n %{kodi_addon}-%{commit}
+%autosetup -n %{kodi_addon}-%{version}-%{kodi_codename}
 
 
 %build
@@ -52,6 +49,9 @@ ExcludeArch:    %{power64} ppc64le
 
 
 %changelog
+* Mon Jan 13 2020 Mohamed El Morabity <melmorabity@fedoraproject.org> - 1:4.4.20-1
+- Update to 4.4.20
+
 * Fri Aug 09 2019 RPM Fusion Release Engineering <leigh123linux@gmail.com> - 1:4.3.6-4
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_31_Mass_Rebuild
 
