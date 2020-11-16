@@ -6,7 +6,7 @@ Name:           kodi-%(tr "." "-" <<<%{kodi_addon})
 # Use Epoch to manage upgrades from older upstream
 # (https://github.com/opdenkamp/xbmc-pvr-addons/)
 Epoch:          1
-Version:        7.1.1
+Version:        8.1.0
 Release:        1%{?dist}
 Summary:        TVHeadEnd PVR for Kodi
 
@@ -48,6 +48,9 @@ ExcludeArch:    %{power64} ppc64le
 
 
 %changelog
+* Mon Nov 16 10:19:16 CET 2020 Mohamed El Morabity <melmorabity@fedoraproject.org> - 1:8.1.0-1
+- Update to 8.1.0
+
 * Thu Aug 20 2020 Mohamed El Morabity <melmorabity@fedoraproject.org> - 1:7.1.1-1
 - Update to 7.1.1 (switch to Matrix branch)
 
