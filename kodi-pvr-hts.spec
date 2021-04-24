@@ -7,7 +7,7 @@ Name:           kodi-%(tr "." "-" <<<%{kodi_addon})
 # (https://github.com/opdenkamp/xbmc-pvr-addons/)
 Epoch:          1
 Version:        8.2.2
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        TVHeadEnd PVR for Kodi
 
 # Addon is GPLv2+. SHA1 implementation from FFmpeg bundled in
@@ -48,6 +48,9 @@ ExcludeArch:    %{power64} ppc64le
 
 
 %changelog
+* Sat Apr 24 2021 Leigh Scott <leigh123linux@gmail.com> - 1:8.2.2-3
+- Rebuilt for removed libstdc++ symbol (#1937698)
+
 * Wed Feb 03 2021 RPM Fusion Release Engineering <leigh123linux@gmail.com> - 1:8.2.2-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_34_Mass_Rebuild
 
