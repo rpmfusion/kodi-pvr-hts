@@ -6,8 +6,8 @@ Name:           kodi-%(tr "." "-" <<<%{kodi_addon})
 # Use Epoch to manage upgrades from older upstream
 # (https://github.com/opdenkamp/xbmc-pvr-addons/)
 Epoch:          1
-Version:        8.3.2
-Release:        2%{?dist}
+Version:        19.0.6
+Release:        1%{?dist}
 Summary:        TVHeadEnd PVR for Kodi
 
 # Addon is GPLv2+. SHA1 implementation from FFmpeg bundled in
@@ -48,6 +48,9 @@ ExcludeArch:    %{power64} ppc64le
 
 
 %changelog
+* Tue Jun 07 2022 Mohamed El Morabity <melmorabity@fedoraproject.org> - 1:19.0.6-1
+- Update to 19.0.6
+
 * Tue Aug 03 2021 RPM Fusion Release Engineering <leigh123linux@gmail.com> - 1:8.3.2-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_35_Mass_Rebuild
 
