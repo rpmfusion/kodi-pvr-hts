@@ -6,7 +6,7 @@ Name:           kodi-%(tr "." "-" <<<%{kodi_addon})
 # Use Epoch to manage upgrades from older upstream
 # (https://github.com/opdenkamp/xbmc-pvr-addons/)
 Epoch:          1
-Version:        20.6.0
+Version:        20.6.1
 Release:        1%{?dist}
 Summary:        TVHeadEnd PVR for Kodi
 
@@ -59,6 +59,9 @@ appstream-util validate-relax --nonet $RPM_BUILD_ROOT%{_metainfodir}/%{name}.met
 
 
 %changelog
+* Mon Feb 13 2023 Mohamed El Morabity <melmorabity@fedoraproject.org> - 1:20.6.1-1
+- Update to 20.6.1
+
 * Sun Jan 29 2023 Mohamed El Morabity <melmorabity@fedoraproject.org> - 1:20.6.0-1
 - Update to 20.6.0
 - Add AppStream metadata
