@@ -6,8 +6,8 @@ Name:           kodi-%(tr "." "-" <<<%{kodi_addon})
 # Use Epoch to manage upgrades from older upstream
 # (https://github.com/opdenkamp/xbmc-pvr-addons/)
 Epoch:          1
-Version:        20.6.2
-Release:        3%{?dist}
+Version:        20.7.0
+Release:        1%{?dist}
 Summary:        TVHeadEnd PVR for Kodi
 
 # - Addon is GPL-2.0-or-later
@@ -18,7 +18,7 @@ URL:            https://github.com/kodi-pvr/%{kodi_addon}/
 Source0:        %{url}/archive/%{version}-%{kodi_codename}/%{kodi_addon}-%{version}.tar.gz
 Source1:        %{name}.metainfo.xml
 
-BuildRequires:  cmake3
+BuildRequires:  cmake
 BuildRequires:  gcc-c++
 BuildRequires:  kodi-devel >= %{kodi_version}
 BuildRequires:  libappstream-glib
@@ -36,12 +36,12 @@ ExcludeArch:    %{power64}
 
 
 %build
-%cmake3
-%cmake3_build
+%cmake
+%cmake_build
 
 
 %install
-%cmake3_install
+%cmake_install
 # Install AppData file
 install -Dpm 0644 %{SOURCE1} $RPM_BUILD_ROOT%{_metainfodir}/%{name}.metainfo.xml
 
@@ -59,6 +59,9 @@ appstream-util validate-relax --nonet $RPM_BUILD_ROOT%{_metainfodir}/%{name}.met
 
 
 %changelog
+* Sat Feb 17 2024 Leigh Scott <leigh123linux@gmail.com> - 1:20.7.0-1
+- Update to 20.7.0
+
 * Sat Feb 03 2024 RPM Fusion Release Engineering <sergiomb@rpmfusion.org> - 1:20.6.2-3
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_40_Mass_Rebuild
 
