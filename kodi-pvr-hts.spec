@@ -6,8 +6,8 @@ Name:           kodi-%(tr "." "-" <<<%{kodi_addon})
 # Use Epoch to manage upgrades from older upstream
 # (https://github.com/opdenkamp/xbmc-pvr-addons/)
 Epoch:          1
-Version:        21.2.1
-Release:        3%{?dist}
+Version:        21.2.6
+Release:        1%{?dist}
 Summary:        TVHeadEnd PVR for Kodi
 
 # - Addon is GPL-2.0-or-later
@@ -17,6 +17,8 @@ License:        GPL-2.0-or-later AND LGPL-2.1-or-later AND MIT
 URL:            https://github.com/kodi-pvr/%{kodi_addon}/
 Source0:        %{url}/archive/%{version}-%{kodi_codename}/%{kodi_addon}-%{version}.tar.gz
 Source1:        %{name}.metainfo.xml
+
+Patch0:         add_missing_include.patch
 
 BuildRequires:  cmake
 BuildRequires:  gcc-c++
@@ -32,7 +34,7 @@ ExcludeArch:    %{power64}
 
 
 %prep
-%autosetup -n %{kodi_addon}-%{version}-%{kodi_codename}
+%autosetup -p1 -n %{kodi_addon}-%{version}-%{kodi_codename}
 
 
 %build
@@ -59,6 +61,9 @@ appstream-util validate-relax --nonet $RPM_BUILD_ROOT%{_metainfodir}/%{name}.met
 
 
 %changelog
+* Wed Mar 19 2025 Leigh Scott <leigh123linux@gmail.com> - 1:21.2.6-1
+- Update to 21.2.6
+
 * Tue Jan 28 2025 RPM Fusion Release Engineering <sergiomb@rpmfusion.org> - 1:21.2.1-3
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_42_Mass_Rebuild
 
