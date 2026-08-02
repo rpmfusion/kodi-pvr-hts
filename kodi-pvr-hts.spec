@@ -6,7 +6,7 @@ Name:           kodi-%(tr "." "-" <<<%{kodi_addon})
 # Use Epoch to manage upgrades from older upstream
 # (https://github.com/opdenkamp/xbmc-pvr-addons/)
 Epoch:          1
-Version:        22.8.2
+Version:        22.9.1
 Release:        1%{?dist}
 Summary:        TVHeadEnd PVR for Kodi
 
@@ -60,6 +60,9 @@ appstream-util validate-relax --nonet %{buildroot}%{_metainfodir}/%{name}.metain
 
 
 %changelog
+* Sun Aug 02 2026 Leigh Scott <leigh123linux@gmail.com> - 1:22.9.1-1
+- Update to 22.9.1
+
 * Tue Jun 30 2026 Leigh Scott <leigh123linux@gmail.com> - 1:22.8.2-1
 - Update for kodi 22
 
